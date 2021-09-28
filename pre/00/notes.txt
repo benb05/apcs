@@ -1,0 +1,2 @@
+Open a terminal in a directory by right clicking and selecting "Open Powershell window here".
+For Windows terminal is called "command prompt".
