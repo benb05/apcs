@@ -1,0 +1,3 @@
+The system will inform you of what the error is in your code.
+For example, it will tell you if there is a missing bracket in the code.
+System.out.println ("text") displays the text in Java
