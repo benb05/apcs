@@ -23,4 +23,4 @@ public class Greet {
 // A string identifier (String str) is necessary because greet is displaying a string.
 
 // UNRESOLVED QUESTIONS
-// What is hardcoding, and how is it done? Assuming it means to mention three people in the greeting.
+// What is hardcoding, and how is it done? Assuming it means to mention three people in the greeting. possibly using variables?
