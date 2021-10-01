@@ -1,3 +1,10 @@
+// <Ben> <Belotser>
+// APCS
+// HW<08> -- <Refactor Freshie Zero>
+// <2021>-<09>-<30>
+
+
+
 public class Greet {
         public static void main(String[] args){
                 greet("Hello Ben, Courtney, Samantha!");
@@ -10,10 +17,10 @@ public class Greet {
 }
 
 
-/*
 
-//DISCOVERIES
-A string identifier (String str) is necessary because greet is displaying a string.
 
-//UNRESOLVED QUESTIONS
-What is hardcoding, and how is it done? Assuming it means to mention three people in the greeting.
+// DISCOVERIES 
+// A string identifier (String str) is necessary because greet is displaying a string.
+
+// UNRESOLVED QUESTIONS
+// What is hardcoding, and how is it done? Assuming it means to mention three people in the greeting.
