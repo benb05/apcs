@@ -3,21 +3,21 @@ public class Greet {
     String greeting;
 
     BigSib richard = new BigSib();
-    richard.setHelloMsg("Hello!");
+    richard.setHelloMsg("Word up");
     BigSib spaceboy = new BigSib();
-    spaceboy.setHelloMsg("Greetings");
+    spaceboy.setHelloMsg("Salutations");
     BigSib timmy = new BigSib();
-    timmy.setHelloMsg("How's it hanging");
+    timmy.setHelloMsg("Hey ya");
     BigSib boy = new BigSib();
-    boy.setHelloMsg("Hey");
+    boy.setHelloMsg("Sup");
 
     greeting = richard.greet("freshman");
     System.out.println(greeting);
-    greeting = spaceboy.greet("Neil Armstrong");
+    greeting = spaceboy.greet("Dr. Spaceman");
     System.out.println(greeting);
-    greeting = timmy.greet("Wario");
+    greeting = timmy.greet("Kong Fooey");
     System.out.println(greeting);
-    greeting = boy.greet("grandma");
+    greeting = boy.greet("mom");
     System.out.println(greeting);
 
 
