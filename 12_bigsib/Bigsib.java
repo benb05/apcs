@@ -1,5 +1,5 @@
 /*
-Benjamin Belotser
+Benjamin Belotser, Jaylen Zheng
 APCS
 HW12 -- BigSib Pt 3: Preset Greetings
 2021-10-05
