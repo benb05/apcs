@@ -6,6 +6,7 @@ HW13 -- CONSTRUCTORS
 DISCOVERIES:
 -Before when we created a new variable in the class, it would have no default value. We can use constructors to change that.
 -We could probably set values for multiple variables using constructors.
+-Constructors shorten and simplify code blocks, leading to more elegant code.
 UNRESOLVED QUESTIONS:
 -Does the variable still have to be defined outside the constructor?
 -Do non-Instance Variables exist?
