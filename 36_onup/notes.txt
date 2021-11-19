@@ -1,0 +1,37 @@
+Benjamin Belotser
+APCS
+Mr. Mykolyk
+HW 36: Appendix D of Java Docs: Debugging
+11-18-2021
+
+
+Most errors can be avoided through incremental development.
+Only the first error message is reliable, so fix one error then recompile.
+Check for syntax errors
+If that doesnt work, make a backup, delete half the code from the original file, and recompile.
+
+Run-time Errors
+
+Some programs appear to stop and do nothing, called "hanging"
+If a loop is causing the issue, print a message directly before and after the loop.
+if second message does not print, it is an infinite loop
+Usually, an infinite recursion will cause program to return stackoverflowerror.C
+Check for a base case in the method causing infinite recursion
+if there is base case, add print statement at beginning that shows parameters
+exceptions are normally caused by trying to access int vars or invoking a method on a null object
+this may be caused by declaring a variable but not assigning it a value
+Sometimes programmers add too many print statements, causing them to get overflowed with outputs
+try removing or commenting out print statements that arent helpful or combine them.
+
+Logic Errors
+
+Logic Errors are the hardest to find because compiler and interpreter do not throw errors
+
+try breaking code into components
+test independently
+the equality operator checks if objects are identical, .equals checks equivalence
+break complex expressions into a series of assignments with temporary variables
+remember to use println, not print, to display output immediately
+step away from computer for a bit
+use another pair of eyes to look over your program
+talk to your duck
