@@ -1,1 +1,20 @@
 
+Record the method signature in the space below.
+A:   public static double sentimentVal( String word )
+
+Does this method require a parameter? If so, what type of parameter is required?
+What happens if you pass a different type of parameter instead? (Try it!)
+A: It requires a parameter of type String. if we try to pass a different type of parameter, the terminal returns the error invalid type.
+
+Does the method return a value? If so, what is the return type?
+A: Yes, it returns a double.
+
+3a. double num = sentimentVal("warm");
+A: will compile, because sentimentVal returns a double, and takes one string parameter.
+
+3b. String word = sentimentval(0.5);
+A: Will not compile, because sentimentval does not return a string, and does not take a double parameter.
+
+3c. Double x = sentimentVal("good", "bad");
+A: Will not compile, because sentimentVal only takes one parameter.
+

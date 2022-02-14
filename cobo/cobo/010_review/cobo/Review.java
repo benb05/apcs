@@ -97,6 +97,8 @@ public class Review {
       return 0;
     }
   }
+
+  double x = sentimentVal(0.5);
   
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none 
