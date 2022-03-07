@@ -194,18 +194,23 @@ public class Maze
     
 
       
-    ms.solve( 4, 3 );
+  //  ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
+   int startX = 0;
+   int startY = 0;
     for (int i = 0; i < 2000; i++){
-      int startPositionX = (int) (Math.random() * 80);
-      int startPositionY = (int) (Math.random() *25);
-      if (ms.onPath(startPositionX, startPositionY)) {
-        ms.solve(startPositionX, startPositionY);
+      startX = (int) (Math.random() * 80);
+       startY = (int) (Math.random() *25);
+      if (ms.onPath(startX, startY)) {
+        ms.solve(startX, startY);
       }
       break;
     }
-    //ms.solve( startX, startY );
+    System.out.println(startX);
+    System.out.println(startY);
+    
+    ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
