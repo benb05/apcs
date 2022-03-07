@@ -2,7 +2,7 @@
 APCS pd 06
 HW70 -- Thinkers Of The Corn
 2022-03-07m
-time spent:
+time spent: 2.0 hrs
 
 Algorithm:
 0. Pick a starting position.
@@ -48,6 +48,9 @@ class MazeSolver
   {
     // init 2D array to represent maze
     // (80x25 is default terminal window size)
+
+  
+    
     _maze = new char[80][25];
     h = 0;
     w = 0;
@@ -197,18 +200,12 @@ public class Maze
   //  ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-   int startX = 0;
-   int startY = 0;
-    for (int i = 0; i < 2000; i++){
-      startX = (int) (Math.random() * 80);
-       startY = (int) (Math.random() *25);
-      if (ms.onPath(startX, startY)) {
-        ms.solve(startX, startY);
-      }
-      break;
+    int startX = (int)(Math.random()*80);
+    int startY = (int)(Math.random()*25);
+    while (ms.onPath(startX, startY) == false){
+      startX = (int)(Math.random()*80);
+      startY = (int)(Math.random()*25);
     }
-    System.out.println(startX);
-    System.out.println(startY);
     
     ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
