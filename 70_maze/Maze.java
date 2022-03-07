@@ -4,6 +4,7 @@ HW70 -- Thinkers Of The Corn
 2022-03-07m
 time spent: 2.0 hrs
 
+
 Algorithm:
 0. Pick a starting position.
 1. If you can go forward, go forward.
@@ -20,7 +21,7 @@ avoiding a deadend loop)
  * 0. _maze[x][y] == WALL vs _maze[x][y] = WALL : == checks if the current position
  is a wall and = assigns the current position as a wall
  * QCC
- *
+ * out of bounds error occurs when Hero goes on border
  ***/
 
 //enable file I/O
