@@ -1,4 +1,4 @@
-// Clyde Sinclair
+// BA Mitzvah: Michael Kamela, Benjamin Belotser, Ameer Alnasser
 // APCS pd0
 // HW71 -- Reading for intent, tracing for VICTORY
 // 2022-03-07m
@@ -10,7 +10,7 @@
  * tests preliminary hypotheses re: utility of mystery algo
  * 
  * <h1>It's a Bird, It's a Plane! It's.... MYSTERION</h1>
- * The Mysterion method ... <YOUR TRIO'S DESCRIPTION HERE> 
+ * The Mysterion method ... a = 0, b = length of array, c = half of b (floor)
  * <p>
  * <b>Note:</b> BLAH blah blah, yakkety schmakketty...
  * @author  Trey Parker, Matt Stone
@@ -96,7 +96,10 @@ public class Mysterion
    */
   public static int mysterion( int arr[], int a, int b, int c)
   {
-	
+  
+
+    
+
   }//end mysterion
 
 

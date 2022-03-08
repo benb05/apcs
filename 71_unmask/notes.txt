@@ -1,0 +1,9 @@
+ DISCO
+ * 
+ * QCC
+ * 
+ * q0: What does it do?
+ * a0:
+ * 
+ * q1: O(?)
+ * a1:
