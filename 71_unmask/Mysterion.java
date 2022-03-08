@@ -94,8 +94,22 @@ public class Mysterion
    * @return int 
    *
    */
-  public static int mysterion( int arr[], int a, int b, int c)
+  public static int[] mysterion( int arr[], int a, int b, int c)
   {
+    int v = arr[c];
+         swap(c, b, arr);  
+      int s = a;
+       for (int i = a; i < b-1; i++){
+
+       
+            if (arr[i] < v){
+                swap (s, i, arr);
+               s+=1;
+            }
+          }
+      swap(s, b, arr);
+          
+      return arr;
   
 
     
@@ -106,7 +120,7 @@ public class Mysterion
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
 
     //init test arrays of magic numbers
     int[] arr1 = {8,21,17,69,343};
@@ -126,7 +140,7 @@ public class Mysterion
     printArr(arr1);
     System.out.println("-----------------------");
 
-    System.out.println("arr3:");
+  /*  System.out.println("arr3:");
     printArr(arr3);
     mysterion(arr3,0,4,testC);
     System.out.println("after mysterion w/ a=0,b=4,c=" 
@@ -149,7 +163,9 @@ public class Mysterion
     + testC +"...");
     printArr(arr5);
     System.out.println("-----------------------");
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
+    */
   }//end main
 
 }//end class Mysterion
+}
