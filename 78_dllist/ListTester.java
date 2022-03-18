@@ -43,7 +43,7 @@ public class ListTester
     for( int i=0; i<7; i++ ) {
       int n = (int)( wu.size() * Math.random() );
       String imposter = "@";
-      System.out.println("adding a poser at index " + n + "...");
+      System.out.println("adding imposter at index " + n + "...");
       wu.add( n, imposter );
       System.out.println("Updated list: " + wu);
     }
