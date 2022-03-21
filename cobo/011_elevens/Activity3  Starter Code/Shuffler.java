@@ -32,7 +32,7 @@ public class Shuffler {
 								 " consecutive efficient selection shuffles:");
 		int[] values2 = {0, 1, 2, 3};
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
+			//selectionShuffle(values2);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values2[k]);
@@ -51,6 +51,17 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int j,k;
+		for ( j = 0, k = 0; j < (values.length + 1)/2; j += 1, k += 2) {
+			shuffled[k] = values[j];
+		}
+		for ( j = (values.length + 1)/2, k = 1; j < values.length; j+= 1, k += 2) {
+			shuffled[k] = values[j];
+		}
+		for (int i = 0; i < values.length; i++) {
+			values[i] = shuffled[i];
+		}
 	}
 
 	/**
