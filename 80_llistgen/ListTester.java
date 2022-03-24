@@ -54,7 +54,14 @@ public class ListTester
       wu.remove(n);
       System.out.println("Updated list: " + wu);
     }
-    
+
+    LList <String []>  ruawatrain = new LList();
+      ruawatrain.add(new String[] {"ben"});
+        ruawatrain.add(new String[] {"josiah", "david"});
+      System.out.println(ruawatrain);
+
+  //    LList <int> ints = new LList();
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()

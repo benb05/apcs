@@ -228,6 +228,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
     System.out.println( james + "\tsize: " + james.size() );
 
     james.add("beat");
+
     System.out.println( james + "\tsize: " + james.size() );
 
     james.add("a");
@@ -264,6 +265,8 @@ public class LList<T> implements List<T> //your List.java must be in same dir
 
     System.out.println( "...after remove(0): " + james.remove(0) );
     System.out.println( james + "\tsize: " + james.size() );
+
+
   }//end main()
 
 }//end class LList
