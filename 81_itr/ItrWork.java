@@ -1,3 +1,9 @@
+// Ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
+// HW81 -- Thank You, Next
+// 2022-03-24
+// time spent:  .5 hrs
+
 /***
  * class ItrWork
  *  SKELETON
@@ -6,12 +12,16 @@
 
 /***
     DISCO
+    next() will move to the next value in the iterator EVERY TIME it is called.
 
     QCC
+    an iterator is a METHOD of interface list... what? Could this be an answer to Piazza post @658?
 
     SUMMARY THE FIRST:
+    Its pretty much a for loop that also allows you to alter the contents of the array as you pass through it.
 
     SUMMARY THE SECOND:
+    Very similar in behavior/use to scanner. A for-each loop that allows you to remove the most-recently-looked-at element.
 
 **/
 
@@ -31,6 +41,12 @@ public class ItrWork
                                 List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    for (Integer i: L) {
+      if (i == key) {
+        return true;
+      }
+    }
+    return false;
   }
 
   //explicitly using an iterator
@@ -39,6 +55,15 @@ public class ItrWork
                                 List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    Iterator it = L.iterator();
+
+    while ( it.hasNext() ) {
+      if ( it.next() == key ) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   //using FOREACH loop
@@ -46,6 +71,15 @@ public class ItrWork
   public static List<Integer> oddsA( List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    List<Integer> odds = new ArrayList();
+
+    for ( Integer i: L ) {
+      if ( i%2 == 1 ) {
+        odds.add( i );
+      }
+    }
+
+    return odds;
   }
 
   //explicitly using an iterator
@@ -53,6 +87,17 @@ public class ItrWork
   public static List<Integer> oddsB( List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    List<Integer> odds = new ArrayList();
+    Iterator it = L.iterator();
+
+    while ( it.hasNext() ) {
+      int val = (int) it.next();  // to avoid typing it.next() twice, skipping stuff
+      if ( val%2 == 1 ) {
+        odds.add( val );
+      }
+    }
+
+    return odds;
   }
 
 
@@ -61,15 +106,21 @@ public class ItrWork
   public static void removeEvens( List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    Iterator it = L.iterator();
+
+    while ( it.hasNext() ) {
+      if ( (int) it.next()%2 == 0 ) {
+        it.remove();
+      }
+    }
   }
 
 
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 
     //var type: List   obj type: ?
-    List<Integer> L =
+    List<Integer> L = new ArrayList();
 
     for( int i = 0; i < 10; i++ )
       L.add(i);
@@ -102,6 +153,7 @@ public class ItrWork
     System.out.println("\nTesting removeEvens...");
     removeEvens(L);
     for( int n : L ) System.out.println(n);
+        /*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
