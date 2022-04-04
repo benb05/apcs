@@ -1,10 +1,11 @@
-//Clyde Sinclair
-//APCS pd0
+//ruawatrain: Benjamin Belotser, David Deng, Josiah Moltz
+//APCS pd6
 //HW75 -- Node for a linked list
-//2022-03-11f
+//2022-03-11
 //time spent: 1.5 hrs
 
-/* DISCO
+/*
+DISCO
   We did not need accessors because it was an inner class and we had access to all of the variables.
 
 QCC
@@ -15,16 +16,17 @@ QCC
  * Implements a node, for use in lists and other container classes.
  * Stores its data as a String
  **/
- public class NodeQueue<QUASAR> implements Queue<QUASAR> {
-   private QNode<QUASAR> _head;
-   private int _size;
-   public NodeQueue (){
-     _head = null;
-     _size = 0;
-   }
-   //~~~~~~~~~~~~~~~~~~begin AP subset~~~~~~~~~~~~~~~~~~
-   //means of removing an element from collection:
- //Dequeues and returns the first element of the queue.
+
+public class NodeQueue<QUASAR> implements Queue<QUASAR> {
+  private QNode<QUASAR> _head;
+  private int _size;
+  public NodeQueue (){
+    _head = null;
+    _size = 0;
+  }
+  //~~~~~~~~~~~~~~~~~~begin AP subset~~~~~~~~~~~~~~~~~~
+  //means of removing an element from collection:
+  //Dequeues and returns the first element of the queue.
   public QUASAR dequeue(){
     QUASAR tmp = peekFront();
 
@@ -35,7 +37,6 @@ QCC
 
     return tmp;
   }
-
 
   //means of adding an element to collection:
   //Enqueue an element onto the back of this queue.
@@ -77,7 +78,7 @@ QCC
     return result;
   }
   public class QNode<QUASAR>
-  {
+  { // inner class that provides NODE structures
     //instance vars
     private QUASAR _cargo;
     private QNode<QUASAR> _nextNode;
@@ -89,7 +90,9 @@ QCC
       _nextNode = next;
     }
 
-    //--------------v  MUTATORS  v--------------
+    // We didn't need accessors because this is an inner class. This means that all the instance variables are already accessable to us.
+
+    //--------------v  MUTATORS  v--------------  We had a discussion about whether or not we really needed these, we decided they weren't necessary but they made the code cleaner (albeit longer)
     public QUASAR setCargo( QUASAR newCargo )
     {
       QUASAR foo = _cargo;
