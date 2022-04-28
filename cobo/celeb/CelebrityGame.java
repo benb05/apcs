@@ -85,7 +85,11 @@ public class CelebrityGame
 			celebNum = Integer.parseInt(in.readLine());
 		}
 		catch ( IOException e ) { }
-
+		System.out.println("Please follow the guidlines for clue-erisms: ");
+		System.out.println("\tCelebrity clues must have at least 10 characters");
+		System.out.println("\tLiterature clues can contain multiple clues separated by commas");
+		System.out.println("\tAcademic clues should contain the field of the academic, and a clue separated by a comma");
+		System.out.println("Type must be one of Academic, Celebrity, Literature where the type describes what the celebrity does");
 		while (celebGameList.size() < celebNum) {
 			try {
 				System.out.println("Name a celebrity!");
@@ -124,8 +128,16 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		if (validateCelebrity(name) && validateClue(guess,type)) {
-			celebGameList.add(new Celebrity(name, guess));
+		if (validateClue(guess,type) && validateCelebrity(name)) {
+			if (type.equals("Literature")) {
+				celebGameList.add(new LiteratureCelebrity(name, guess));
+			}
+			else if (type.equals("Academic")) {
+				celebGameList.add(new AcademicCelebrity(name, guess));
+			}
+			else {
+				celebGameList.add(new Celebrity(name, guess));
+			}
 		}
 	}
 
@@ -148,7 +160,19 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return (clue.length() > 9 || clue.contains(",")) && (type.equals("LiteratureCelebrity") || type.equals("Celebrity"));
+		if ( (clue.length() > 9 || clue.contains(",")) &&		// We think this or statement is STUPID, ain't no way you inputting multiple clues in under 10 characters
+				 (type.equals("Literature") || type.equals("Celebrity") || type.equals("Academic")) )
+				 {
+					 return true;
+				 }
+		else {
+			System.out.println("Please follow the guidlines for clue-erisms: ");
+			System.out.println("\tCelebrity clues must have at least 10 characters");
+			System.out.println("\tLiterature clues can contain multiple clues separated by commas");
+			System.out.println("\tAcademic clues should contain the field of the academic, and a clue separated by a comma");
+			return false;
+		}
+
 	}
 
 	/**

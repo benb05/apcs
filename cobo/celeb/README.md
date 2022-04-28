@@ -14,11 +14,11 @@ time spent: 1.3 hrs
 * ~Make play method~
 * ~Implement in terminal with scanner (take info from YoRPG scanner magicks)~
 * ~Make program with main method~
-* Extend the Celebrity class, making it more specific with subclasses
-* Open ended activities
-* Create superclass
-* Create subclass
-* Override method from superclass
+* ~Extend the Celebrity class, making it more specific with subclasses~
+* Open ended activities *WE DECIDED AGAINST THIS BECAUSE WE HAD USED SUB/SUPERCLASSES BEFORE*
+  * Create superclass
+  * Create subclass
+  * Override method from superclass
 * Make a GUI
 * Add radio button to GUI
 # Our Experience

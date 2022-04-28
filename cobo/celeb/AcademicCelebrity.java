@@ -1,17 +1,22 @@
 public class AcademicCelebrity extends Celebrity {
-	public LiteratureCelebrity(String answer, String field, String clue) {
-    super(answer, makeClue(field, clue));
+	private String field;
+
+	public AcademicCelebrity(String answer, String clue) {
+    super(answer, clue);
+		processClues();
   }
 
-  public String makeClue(String field, String clue) {
-    return "This academic is in the field of " + field + ". They are associated with " + clue;
-  }
+	private void processClues() {
+		String[] clues = super.getClue().split(",");
+		field = clues[0];
+		super.setClue(clues[1]);
+	}
 
-  public String setClue(String field, String clue) {
-    return super.setClue(makeClue(field, clue));
-  }
+	public String getClue() {
+		return "This Academic is in the field of " + field + ". Their clue is: " + super.getClue();
+	}
 
-  public String toString() {
-    return "The celebrity is... " + _answer + ". " + _clue;
-  }
+	public String toString() {
+		return "The Academic is... " + getAnswer() + ". They are in the field of " + field + ".\nTheir clue was " + super.getClue() + ".";
+	}
 }

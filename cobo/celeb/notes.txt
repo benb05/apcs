@@ -5,9 +5,10 @@ L09 -- Some Folks Call It A Charades
 time spent: 1.3 hrs
 
 DISCO
-0. Not much, we didn't have time for the GUI so not much was new.
-1. In git-flavored md you can make a second-level bullet point with <tab> *
-2. Appending an & at the end of a terminal command allows you to continue using the terminal after running the command (used for evince)
+0. In git-flavored md you can make a second-level bullet point with <tab> *
+1. Appending an & at the end of a terminal command allows you to continue using the terminal after running the command (used for evince)
+2. processClues should be private because allowing it to be called would return pre-used clues to the top of the clues list.
+3. What @Override is
 
 QCC
 0. Wow that lab was so out of order. They were referencing different sections throughout the lab and GUI was everywhere.
