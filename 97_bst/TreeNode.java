@@ -1,8 +1,8 @@
 // Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
 // APCS pd6
-// HW95 --  Algorithm as Data Structure
-// 2022-05-09
-// time spent: 1 hrs
+// HW97 --  Prune Your Tree
+// 2022-05-12
+// time spent: 2.5 hrs
 
 /**
  * class TreeNode
