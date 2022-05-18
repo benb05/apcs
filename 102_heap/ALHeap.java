@@ -1,3 +1,14 @@
+// Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+// APCS pd6
+// HW102 -- Heap on Heaping on
+// 2022-05-17
+// time spent: 1.5 hrs
+ 
+/* DISCO:
+  heap is not so terrible. 
+
+QCC: what do we use heaps for?
+  */
 import java.util.ArrayList;
 
 /**
@@ -79,12 +90,15 @@ public class ALHeap
   }//O(log(n))
 
 
-  /**
+ /**
    * removeMin()  ---  means of removing an element from heap
    * Removes and returns least element in heap.
    * Postcondition: Tree maintains heap property.
-   * ALGO:
-   * 
+   * ALGO: 
+   *  basecases: if heap is empty, then return null. If heap is size 1, return the value at index 0 (first element). 
+   * else, set the rightmost leaf to be the root. While it has children, check if it has 2 children, 
+   *  if it does, then swap with smaller value. else, compare with left child. if greater, swap. else, return.
+   *
    */
   public Integer removeMin()
   {
@@ -94,39 +108,12 @@ public class ALHeap
     if(_heap.size() == 1){
       return _heap.remove(0);
     }
-    
     Integer retVal =  _heap.set(0, _heap.remove(_heap.size()- 1));
     int currPos = 0;
-    while(2 * currPos + 1 < _heap.size()){
-      if(2 * currPos + 2 < _heap.size()){
-        if(_heap.get(2 *currPos + 1) < _heap.get(2*currPos + 2)){
-          if(_heap.get(2*currPos + 1) < _heap.get(currPos)){
-            swap(currPos, 2*currPos + 1);
-            currPos = 2*currPos+1;
-          }
-          else{
-            return retVal;
-          }
-        }
-        else {
-          if(_heap.get(2*currPos + 2) < _heap.get(currPos)){
-            swap(currPos, 2*currPos + 2);
-            currPos = 2*currPos+2;
-          }
-          else{
-            return retVal;
-          }
-        }
-      }
-      else{
-        if(_heap.get(2*currPos + 1) < _heap.get(currPos)){
-          swap(currPos, 2*currPos + 1);
-          currPos = 2* currPos + 1;
-        }
-        else{
-          return retVal;
-        }
-      }
+    while( minChildPos(currPos) != -1){
+      int tmp = minChildPos(currPos);
+      swap(minChildPos(currPos),currPos);
+      currPos = tmp;
     }
     return retVal;
   }//O(log(n))
@@ -143,9 +130,16 @@ public class ALHeap
     if ( 2*pos+1 >= _heap.size()){
       return -1;
     }
-    return minOf(_heap.get(2 * pos + 1), _heap.get(2 * pos + 2)) == _heap.get(2 * pos + 1) ? 2 * pos + 1 : 2 * pos + 2;
-  }//O(?)
-
+    if ( 2*pos+2 >= _heap.size()) {
+      return 2*pos+1;
+    }
+    if ( _heap.get(2*pos+1) <= _heap.get(2*pos+2) ) {
+      return 2*pos+1;
+    }
+    else {
+      return 2*pos+2;
+    }
+  }//O(1)
 
   //~~~~~~~~~~~~~ aux helper fxns ~~~~~~~~~~~~~~
   private Integer minOf( Integer a, Integer b )
