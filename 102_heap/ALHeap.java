@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * class ALHeap
  * SKELETON
@@ -60,11 +62,21 @@ public class ALHeap
    * Inserts an element in the heap
    * Postcondition: Tree exhibits heap property.
    * ALGO:
-   * <your clear && concise procedure here>
+   * add the value at leftmost child of highest level (end of arrayList). 
+   * While addVal is less than its parent and its not the root, swap addVal with its parent.
+   * 
    */
   public void add( Integer addVal )
   {
-  }//O(?)
+    int currPos = _heap.size();
+    _heap.add(currPos, addVal);
+
+    while(currPos > 0 && addVal <_heap.get((currPos-1)/2)){
+      swap(currPos, (currPos - 1)/2);
+      currPos = (currPos -1)/2;
+    }
+    
+  }//O(log(n))
 
 
   /**
@@ -72,11 +84,52 @@ public class ALHeap
    * Removes and returns least element in heap.
    * Postcondition: Tree maintains heap property.
    * ALGO:
-   * <your clear && concise procedure here>
+   * 
    */
   public Integer removeMin()
   {
-  }//O(?)
+    if(_heap.size() == 0){
+      return null;
+    }
+    if(_heap.size() == 1){
+      return _heap.remove(0);
+    }
+    
+    Integer retVal =  _heap.set(0, _heap.remove(_heap.size()- 1));
+    int currPos = 0;
+    while(2 * currPos + 1 < _heap.size()){
+      if(2 * currPos + 2 < _heap.size()){
+        if(_heap.get(2 *currPos + 1) < _heap.get(2*currPos + 2)){
+          if(_heap.get(2*currPos + 1) < _heap.get(currPos)){
+            swap(currPos, 2*currPos + 1);
+            currPos = 2*currPos+1;
+          }
+          else{
+            return retVal;
+          }
+        }
+        else {
+          if(_heap.get(2*currPos + 2) < _heap.get(currPos)){
+            swap(currPos, 2*currPos + 2);
+            currPos = 2*currPos+2;
+          }
+          else{
+            return retVal;
+          }
+        }
+      }
+      else{
+        if(_heap.get(2*currPos + 1) < _heap.get(currPos)){
+          swap(currPos, 2*currPos + 1);
+          currPos = 2* currPos + 1;
+        }
+        else{
+          return retVal;
+        }
+      }
+    }
+    return retVal;
+  }//O(log(n))
 
 
   /**
@@ -115,7 +168,7 @@ public class ALHeap
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
       ALHeap pile = new ALHeap();
 
       pile.add(2);
@@ -161,7 +214,7 @@ public class ALHeap
       System.out.println(pile);
       System.out.println("removing " + pile.removeMin() + "...");
       System.out.println(pile);
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      
   }//end main()
 
 }//end class ALHeap
