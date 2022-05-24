@@ -1,0 +1,24 @@
+Ruawatrain :: Benjamin Belotser, David Deng, Josiah Moltz
+APCS pd6
+HW105 -- 'Tis Hard to Search for 'Processing'
+2022-05-23
+time spent: .5 hrs
+
+WHAT THIS DEMO SHOWS
+Use of fill
+The coordinate system of processing (everything has positive x,y coordinate, +x is right, +y is down)
+Sine and Cosine functions in use (THEY ARE IN RADIANS YALL)
+PI variable
+delay
+triangle function
+
+WHY YOU CARE
+It looks cool!!
+The sin and cosine are super useful, and can be used to rotate stuffs
+
+DISCO
+weird coordinate system
+radians
+
+QCC
+why weird coordinate system? Why couldn't it be like netlogo?
